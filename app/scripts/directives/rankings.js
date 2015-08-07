@@ -1,20 +1,19 @@
 'use strict';
 
 angular.module('angularApp')
-  .directive('ranking', function() {
+  .directive('ranking', function($http) {
     return {
         restrict: 'E',
         scope: {},
         link: function(scope, element, attrs) {
-          scope.tabs = [
-            {
-              name: 'friends',
-              list: [
-                { name: 'a', val: '1' },
-                { name: 'b', val: '2' }
-              ]
-            }
-          ];
+          scope.tabs = [];
+          $http
+            .get('http://54.153.46.28/competition')
+            .then(function(response) {
+              scope.tabs = response.data;
+            }, function(response) {
+              console.log('Error: ', response);
+            });
         },
         templateUrl: '../../views/ranking-widget.html'
     };
