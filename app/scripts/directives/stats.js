@@ -1,24 +1,19 @@
 'use strict';
 
 angular.module('angularApp')
-  .directive('stats', function() {
+  .directive('stats', function($http) {
     return {
         restrict: 'E',
 	  scope: {}, 
 	  link: function(scope, element, attrs) {
-	    scope.tabs = [
-		{
-		    name: 'Stats',
-		    list: [
-	              { name: 'Energy/Hr', val: energyPerHour(1, 100) + 
-			" MW/Hr"},
-	              { name: 'Daily Rank', val: ranking(1, 100)},
-	              { name: 'Monthly Energy', val: monthlyEnergy(10) + 
-		      " GW"},
-	              { name: 'Monthly Rank', val: ranking(99, 100) },
-		   ]
-		}
-	    ];
+	    scope.tabs = [];
+	    $http
+		.get('http://http://54.153.46.28/waterusage')
+		.then(function(response) {
+			scope.tabs = response.data;
+		    }, function(response) {
+			console.log('Error: ', response);
+		    });
         },
         templateUrl: '../../views/stats-widget.html'
     };
