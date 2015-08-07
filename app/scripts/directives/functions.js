@@ -1,11 +1,9 @@
-function energyPerHour(MW, hour){
-    return MW/hour;
+//Returns the water usage (in gallons) per time unit
+function waterUsagePerTimeUnit(gallons, timeUnit){
+    return gallons/timeUnit;
 }
 
-function monthlyEnergy(GW){
-    return GW;
-}
-
+//Returns your ranking among the total people in your location
 function ranking(yourRank, totalPeople){
     var yourRankString = yourRank.toString();
     var totalPeopleString = totalPeople.toString();
