@@ -7,7 +7,7 @@ angular.module('angularApp')
         link: function(scope, element, attrs) {
           scope.recommendations = ["a","b","c","d"];
           scope.weather = {};
-          $http.get('http://api.openweathermap.org/data/2.5/forecast/city?id=6098924&APPID=dbd3904b502508a91efe58edbbe5e589').
+          $http.get('http://api.openweathermap.org/data/2.5/weather?id=5381396').
             then(function(response) {
               scope.weather = response.data;
               console.log(scope.weather);
