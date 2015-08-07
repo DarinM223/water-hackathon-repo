@@ -9,5 +9,5 @@
  */
 angular.module('angularApp')
   .controller('MainCtrl', function ($scope) {
-      $scope.hello = 'Hello!';
+    $scope.hello = 'Hello!';
   });
