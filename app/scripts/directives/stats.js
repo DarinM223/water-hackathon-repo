@@ -6,10 +6,13 @@ angular.module('angularApp')
         restrict: 'E',
 	  scope: {}, 
 	  link: function(scope, element, attrs) {
-          scope.hello = 'Stats UPDATED';	
-	  scope.integer = 9;
-	  scope.stats = energyPerHour(scope.integer, 91);
-	  scope.rank = ranking(1, 692332, "Daily");
+	    scope.tabs = [
+		{
+		    name: 'Stats',
+		    list: [
+	              { name: 'Energy/hr', val: energyPerHour(1, 100)}, 		          ]
+		}
+	    ];
         },
         templateUrl: '../../views/stats-widget.html'
     };
