@@ -11,6 +11,9 @@ angular.module('angularApp')
 		.get('http://54.153.46.28/waterusage')
 		.then(function(response) {
 			scope.tabs = response.data;
+			//
+			console.log(scope.tabs);
+			//
 		    }, function(response) {
 			console.log('Error: ', response);
 		    });
