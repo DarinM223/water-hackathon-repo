@@ -2,8 +2,9 @@
   <div class="panel-heading">
     <h3 id="rectitle" class="panel-title">Ways You May Save</h3>
   </div>
-  <div class="panel-body">
-    <p>Our server room monkeys crunched some numbers and found these ways to improve your water usage!</p>  
+  <div class="panel-body"> {{b}}
+    <p>Our server room monkeys crunched some numbers and found these ways to improve your water usage!</p>
+    <p>Its currently {{ (weather.main.temp - 273.15) * 1.8 + 32}} degrees F, {{ weather.weather[0].description}}.
   </div>
   <ul id="reclist" class="list-group">
     <li class="list-group-item "ng-repeat="n in recommendations">
