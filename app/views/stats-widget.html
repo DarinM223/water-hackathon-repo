@@ -1,3 +1,15 @@
+<table style="width:100%">
+  <tr>
+    <td>Cost Per Day</td>
+    <td>${{ tabs.month[0] * 0.0047}}</td>
+  </tr>
+  <tr>
+    <td>Trees Per Day</td>
+    <td>{{ tabs.month[0]/125}}</td>
+  </tr>
+</table>
+
+
 <ul class="nav nav-tabs">
   <li ng-class="" ng-repeat="(key, value) in tabs">
     <a showtab="" href="#{{ key }}">{{ key }}</a>
