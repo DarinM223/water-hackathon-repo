@@ -1,20 +1,15 @@
-function energyPerHour(energy, hour){
-    return energy/hour;
+function energyPerHour(MW, hour){
+    return MW/hour;
 }
 
-function monthlyEnergyUsage(monthlyEnergy){
-    return monthlyEnergy;
+function monthlyEnergy(GW){
+    return GW;
 }
 
-function ranking(yourRank, totalPeople, rankType){
+function ranking(yourRank, totalPeople){
     var yourRankString = yourRank.toString();
     var totalPeopleString = totalPeople.toString();
     var message = yourRankString + "/" + totalPeopleString; 
 
-    if(rankType === "Daily")
-	return "Your Daily Rank: " + message;
-    else if(rankType === "Monthly")
-	return "Your Monthly Rank: " + message;
-    else
-	return "Please enter a valid rank type";
+    return message;
 }
