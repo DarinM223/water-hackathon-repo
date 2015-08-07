@@ -16,7 +16,7 @@ angular.module('angularApp')
 	  link: function(scope, element, attrs) {
           scope.hello = 'Stats';
 	  //  energyPerHour();
-	  scope.stats = ;
+	  //scope.stats = ;
         },
         templateUrl: '../../views/stats-widget.html'
     };
