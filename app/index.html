@@ -59,7 +59,7 @@
     
     function runData() {
         $.get('http://54.153.46.28/waterusage', function(data) {
-            gauge5.update(data.ten[0] * 100);
+            gauge5.update(data.ten[0] * 800);
         });
 
         setTimeout(function() { runData(); }, 1000);
